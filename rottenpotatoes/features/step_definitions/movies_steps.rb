@@ -22,8 +22,8 @@ Then /I should see all the movies/ do
   Movie.all.each do |movie|
     step %{I should see "#{movie.title}"}
   end
+end
 Then(/^the director of "([^"]*)" should be "([^"]*)"$/) do |p1,p2|
   movie=Movie.find_by_title(p1)
   expect(movie.director).to eql(p2)
-end
 end
